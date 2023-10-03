@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import BarChart from './Barchart';
 
-function App() {
+const App = () => {
+  const chartData = [
+    {
+      name: 'Series 1',
+      data: [
+        { x: 'Category 1', y: 20 },
+        { x: 'Category 2', y: 35 },
+        { x: 'Category 3', y: 15 },
+      ],
+    },
+    {
+      name: 'Series 2',
+      data: [
+        { x: 'Category 1', y: 10 },
+        { x: 'Category 2', y: 25 },
+        { x: 'Category 3', y: 30 },
+      ],
+    },
+  ];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Bar Chart with Modal</h1>
+      <BarChart data={chartData} />
     </div>
   );
-}
+};
 
 export default App;
